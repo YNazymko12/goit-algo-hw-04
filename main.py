@@ -1,6 +1,5 @@
 import timeit
 import random
-from tabulate import tabulate
 
 # Функція для вимірювання часу сортування
 def measure_time(sort_func, data):
@@ -91,7 +90,16 @@ def main():
             row.append(f"{exec_time:.6f} s")
         results.append(row)
 
-    print(tabulate(results, headers=headers, tablefmt="grid"))
+    col_widths = [max(len(str(cell)) for cell in column) for column in zip(*([headers] + results))]
+
+    header_row = " | ".join(f"{headers[i]:<{col_widths[i]}}" for i in range(len(headers)))
+    print("-" * len(header_row))
+    print(header_row)
+    print("-" * len(header_row))
+
+    for row in results:
+        print(" | ".join(f"{row[i]:<{col_widths[i]}}" for i in range(len(row))))
+    print("-" * len(header_row))
 
 if __name__ == "__main__":
     main()
