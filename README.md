@@ -1,8 +1,6 @@
 # Домашнє завдання до теми “Алгоритми сортування”
 
----
-
-## Array Size | Insertion Sort | Merge Sort | Timsort (Python's sorted) | Timsort (Python's sort)
+# Таблиця результатів сортування різних алгоритмів
 
 | Array Size       | Insertion Sort | Merge Sort | Timsort (Python's sorted) | Timsort (Python's sort) |
 | ---------------- | -------------- | ---------- | ------------------------- | ----------------------- |
