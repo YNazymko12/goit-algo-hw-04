@@ -93,13 +93,12 @@ def main():
     col_widths = [max(len(str(cell)) for cell in column) for column in zip(*([headers] + results))]
 
     header_row = " | ".join(f"{headers[i]:<{col_widths[i]}}" for i in range(len(headers)))
-    print("-" * len(header_row))
+    separator_row = " | ".join('-' * col_widths[i] for i in range(len(headers)))
     print(header_row)
-    print("-" * len(header_row))
+    print(separator_row)
 
     for row in results:
         print(" | ".join(f"{row[i]:<{col_widths[i]}}" for i in range(len(row))))
-    print("-" * len(header_row))
 
 if __name__ == "__main__":
     main()
